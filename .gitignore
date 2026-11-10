@@ -1,0 +1,9 @@
+node_modules/
+dist/
+portable/
+release/
+.rebuild-backup/
+.env*
+!.env.example
+test-results/
+playwright-report/

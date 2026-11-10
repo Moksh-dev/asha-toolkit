@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+:root {
+  --asha-paper: #ffffff;
+  --asha-surface: #f6faff;
+  --asha-feature: #eef7ff;
+  --asha-ink: #10233d;
+  --asha-muted: #52627a;
+  --asha-soft: #98a7ba;
+  --asha-green: #1f5eff;
+  --asha-blue-dark: #174bd6;
+  --asha-coral: #00aef0;
+  --asha-orange-soft: #67c7ff;
+  --asha-gold: #8bdcff;
+  --asha-cloud: #edf6ff;
+  --asha-line: #dbe9f7;
+  --asha-success: #16a34a;
+  --asha-warning: #f59e0b;
+  --asha-error: #dc2626;
+  --asha-info: #2563eb;
+  --font-sans-local: "Inter", "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-display-local: "Impact", "Haettenschweiler", "Arial Narrow", "Franklin Gothic Condensed", "Arial Black", sans-serif;
+  --font-hand-local: "Segoe Script", "Segoe Print", "Bradley Hand ITC", "Comic Sans MS", cursive;
+}
+
+@theme inline {
+  --color-asha-paper: var(--asha-paper);
+  --color-asha-surface: var(--asha-surface);
+  --color-asha-feature: var(--asha-feature);
+  --color-asha-ink: var(--asha-ink);
+  --color-asha-muted: var(--asha-muted);
+  --color-asha-soft: var(--asha-soft);
+  --color-asha-green: var(--asha-green);
+  --color-asha-blue-dark: var(--asha-blue-dark);
+  --color-asha-coral: var(--asha-coral);
+  --color-asha-orange-soft: var(--asha-orange-soft);
+  --color-asha-gold: var(--asha-gold);
+  --color-asha-cloud: var(--asha-cloud);
+  --color-asha-line: var(--asha-line);
+  --shadow-soft: 0 14px 45px rgba(31, 94, 255, 0.09);
+  --shadow-lift: 0 24px 70px rgba(31, 94, 255, 0.16);
+  --shadow-coral: 0 16px 42px rgba(0, 174, 240, 0.24);
+  --font-sans: var(--font-sans-local);
+  --font-display: var(--font-display-local);
+  --font-hand: var(--font-hand-local);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #f7fbff;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    linear-gradient(180deg, #f8fcff 0%, #eef7ff 46%, #ffffff 100%),
+    radial-gradient(circle at 12% 6%, rgba(31, 94, 255, 0.1), transparent 28%),
+    radial-gradient(circle at 88% 2%, rgba(0, 174, 240, 0.12), transparent 26%);
+  color: var(--asha-ink);
+  font-family: var(--font-sans-local);
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.font-display {
+  font-family: var(--font-display-local);
+  font-stretch: condensed;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.font-card-message {
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", "Arial Black", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.font-hand {
+  font-family: var(--font-hand-local);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.eyebrow-hand {
+  font-family: var(--font-hand-local);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.asha-grid {
+  background-image:
+    linear-gradient(rgba(31, 94, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 94, 255, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.tagline-track {
+  flex-wrap: wrap;
+}
+
+.tagline-word {
+  animation: tagline-rise 5.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.tagline-word:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.tagline-word:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.tagline-word:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.tagline-word:nth-child(4n + 1) {
+  animation-delay: 0s;
+}
+
+.tagline-word:nth-child(4n + 2) {
+  animation-delay: 0.5s;
+}
+
+.tagline-word:nth-child(4n + 3) {
+  animation-delay: 1s;
+}
+
+.tagline-word:nth-child(4n) {
+  animation-delay: 1.5s;
+}
+
+.animated-line {
+  background-size: 220% 100%;
+  animation: line-flow 5s ease-in-out infinite;
+}
+
+@keyframes tagline-rise {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 0 0 rgba(31, 94, 255, 0);
+  }
+  18% {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(31, 94, 255, 0.18);
+  }
+  36% {
+    transform: translateY(0);
+    box-shadow: 0 0 0 rgba(31, 94, 255, 0);
+  }
+}
+
+@keyframes line-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .tagline-track,
+  .tagline-word,
+  .animated-line {
+    animation: none !important;
+  }
+}
+

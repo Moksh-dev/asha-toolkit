@@ -1,0 +1,35 @@
+{
+  "name": "project-asha-awareness-toolkit",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build && vite build --config vite.portable.config.ts && node scripts/offline.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "lint": "eslint src tests scripts *.ts *.mjs",
+    "test": "vitest run",
+    "test:browser": "playwright test",
+    "package": "node scripts/package.mjs"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@testing-library/react": "^16.3.3",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^10.14.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "jsdom": "^31.0.0",
+    "prettier": "^3.9.10",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^6.0.0",
+    "vite-plugin-singlefile": "^2.2.0",
+    "vitest": "^5.1.0"
+  }
+}
